@@ -1,1 +1,6 @@
-Middle (remember the 'o' from mongoose not mangoose :)
+<h2>Recently added</h2>
+<div>
+    <% books.forEach(book => { %>
+        <img src="<%= book.coverImagePath  %>" alt="image thumbnail" height="150" width="100">
+    <% }) %>
+</div>
