@@ -66,4 +66,25 @@ router.post('/', async (req, res) => {
     // })
 })
 
+router.get('/:id', (req, res) => {
+    res.send('Show Author ' + req.params.id)
+})
+
+router.get('/:id/edit', async (req, res) => {
+    try {
+        const author = Author.findByID(req.params.id)
+        res.render('/authors/edit', {author: author })
+    } catch {
+        res.redirect('/authors')
+    }
+})
+
+router.put('/:id/', (req, res) => {
+    res.send('Upload Author ' + req.params.id)
+})
+
+router.delete('/:id', (req, res) => {
+    res.send('Delete Author ' + req.params.id)
+})
+
 module.exports = router

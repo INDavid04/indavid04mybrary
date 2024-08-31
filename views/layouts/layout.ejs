@@ -17,6 +17,15 @@
     <script src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
     <script src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
     <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
-    <script src="../../public/javascripts/fileUpload.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            FilePond.registerPlugin(FilePondPluginImagePreview);
+            FilePond.registerPlugin(FilePondPluginImageResize);
+            FilePond.registerPlugin(FilePondPluginFileEncode);
+            const inputElement = document.querySelector('input[type="file"]');
+            const pond = FilePond.create(inputElement);
+            FilePond.parse(document.body);
+        });  
+    </script>
 </body>
 </html>

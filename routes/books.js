@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
         description: req.body.description
     })
     
-    saveCover(book, req.body.cover)
+    saveCover(book, req.body.coverImageType)
 
     try {
         const newBook = await book.save()
